@@ -49,7 +49,11 @@ end
 # [new_data_1, new_data_2]
 #end
 
-
+def merge_data(keys, data)
+  merged = []
+  keys.each {|i| data.first.map {|k,v| if i.values[0] == k then merged << i.merge(v) end}}
+  merged
+end
 
 def find_cool(cool)
   if cool[1].values[1] == "cool"
